@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.local
+venv/
+.venv/
+env/
+backend/storage/uploads/*
+!backend/storage/uploads/.gitkeep
+backend/storage/vectorstores/*
+!backend/storage/vectorstores/.gitkeep
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
+# OS and IDEs
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.sln
