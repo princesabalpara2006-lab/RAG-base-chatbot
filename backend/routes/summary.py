@@ -1,7 +1,8 @@
 import os
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from backend.rag.vectorstore import load_vectorstore
+from rag.vectorstore import load_vectorstore
+from rag.db import RAGDatabase
 
 router = APIRouter()
 
@@ -49,7 +50,7 @@ async def generate_summary(request: SummaryRequest):
     # Cap size of text to send to LLM to prevent context overflow or high API latency
     max_char_limit = 20000
     if len(full_text) > max_char_limit:
-        # Generate a smart, representative sample across the document (head, middle, tail)
+        # Generate a smart, representative sample across the document (head, middle, tail chunks)
         n = len(docs)
         head = docs[:min(5, n)]
         tail = docs[-min(3, n):] if n > 5 else []
@@ -64,19 +65,21 @@ async def generate_summary(request: SummaryRequest):
         full_text = "\n\n".join([d.page_content for d in sampled_docs])
         full_text = full_text[:max_char_limit]
         
-    api_key = os.environ.get("GROQ_API_KEY")
+    # Get active settings from local DB
+    settings = RAGDatabase.get_settings()
+    provider = settings.get("provider", "groq")
+    model = settings.get("model", "llama-3.3-70b-versatile")
+    api_keys = settings.get("api_keys", {})
+    
+    # Fetch API key
+    api_key = api_keys.get(provider) or os.environ.get(f"{provider.upper()}_API_KEY")
     if not api_key:
         raise HTTPException(
-            status_code=500, 
-            detail="GROQ_API_KEY is not configured on the backend server."
+            status_code=400, 
+            detail=f"API Key for {provider.upper()} is not configured. Please set it in Settings."
         )
         
-    try:
-        from groq import Groq
-        client = Groq(api_key=api_key)
-        model = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
-        
-        prompt = f"""You are a document summarizer.
+    prompt = f"""You are a document summarizer.
 Write a concise, professional, and well-structured summary of the document based ONLY on the following text.
 Highlight the main objective, key points, and critical conclusions using clear formatting and bullet points.
 Do not use external knowledge or make assumptions.
@@ -85,20 +88,47 @@ Text:
 {full_text}
 
 Summary:"""
-        
-        response = client.chat.completions.create(
-            messages=[{"role": "user", "content": prompt}],
-            model=model,
-            temperature=0.3,
-            max_tokens=600
-        )
-        
-        summary = response.choices[0].message.content.strip()
+
+    try:
+        if provider == "groq":
+            from groq import Groq
+            client = Groq(api_key=api_key)
+            model_name = model if model else "llama-3.3-70b-versatile"
+            
+            response = client.chat.completions.create(
+                messages=[{"role": "user", "content": prompt}],
+                model=model_name,
+                temperature=0.3,
+                max_tokens=600
+            )
+            summary = response.choices[0].message.content.strip()
+            
+        elif provider in ["openai", "gemini"]:
+            from openai import OpenAI
+            
+            if provider == "openai":
+                client = OpenAI(api_key=api_key)
+                model_name = model if model else "gpt-4o-mini"
+            else: # gemini
+                client = OpenAI(
+                    api_key=api_key,
+                    base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+                )
+                model_name = model if model else "gemini-1.5-flash"
+                
+            response = client.chat.completions.create(
+                messages=[{"role": "user", "content": prompt}],
+                model=model_name,
+                temperature=0.3,
+                max_tokens=600
+            )
+            summary = response.choices[0].message.content.strip()
+            
         return {"summary": summary}
         
     except Exception as e:
-        print(f"Error querying Groq for summary: {e}")
+        print(f"Error querying {provider.upper()} for summary: {e}")
         raise HTTPException(
             status_code=500, 
-            detail="Failed to generate document summary. Please try again."
+            detail=f"Failed to generate document summary via {provider.upper()}. Please try again."
         )

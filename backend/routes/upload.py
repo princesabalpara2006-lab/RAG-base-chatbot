@@ -3,9 +3,10 @@ import uuid
 import shutil
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from pydantic import BaseModel
-from backend.rag.loaders import load_document
-from backend.rag.splitter import split_documents
-from backend.rag.vectorstore import create_vectorstore
+from rag.loaders import load_document
+from rag.splitter import split_documents
+from rag.vectorstore import create_vectorstore, delete_vectorstore
+from rag.db import RAGDatabase
 
 router = APIRouter()
 
@@ -96,6 +97,37 @@ Questions:"""
         "What are the main recommendations?"
     ]
 
+@router.get("/documents")
+def get_all_documents():
+    return RAGDatabase.get_documents()
+
+@router.delete("/documents/{document_id}")
+def delete_document_endpoint(document_id: str):
+    doc = RAGDatabase.get_document(document_id)
+    if not doc:
+        raise HTTPException(status_code=404, detail="Document not found.")
+    
+    # Delete from local JSON DB
+    RAGDatabase.delete_document(document_id)
+    
+    # Delete FAISS vectorstore on disk
+    try:
+        delete_vectorstore(document_id)
+    except Exception as e:
+        print(f"Error deleting vectorstore: {e}")
+        
+    # Delete uploaded source file if it exists
+    filename = doc.get("filename", "")
+    _, ext = os.path.splitext(filename.lower())
+    source_file = os.path.join(UPLOAD_DIR, f"{document_id}{ext}")
+    if os.path.exists(source_file):
+        try:
+            os.remove(source_file)
+        except Exception as e:
+            print(f"Error deleting raw file: {e}")
+            
+    return {"status": "success", "message": "Document and indexes deleted successfully."}
+
 @router.post("/upload", response_model=UploadResponse)
 async def upload_document(file: UploadFile = File(...)):
     # Validate extension
@@ -115,6 +147,8 @@ async def upload_document(file: UploadFile = File(...)):
         with open(temp_file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
             
+        file_size = os.path.getsize(temp_file_path)
+            
         # 1. Load document slide-by-slide or page-by-page
         raw_docs = load_document(temp_file_path)
         if not raw_docs:
@@ -122,6 +156,8 @@ async def upload_document(file: UploadFile = File(...)):
                 status_code=400, 
                 detail="The uploaded document appears to be empty."
             )
+            
+        page_count = max([d.metadata.get("page", 0) for d in raw_docs]) if raw_docs else 0
             
         # 2. Split text into chunks
         chunks = split_documents(raw_docs)
@@ -134,7 +170,10 @@ async def upload_document(file: UploadFile = File(...)):
         # 3. Create & save vector store locally
         create_vectorstore(chunks, document_id)
         
-        # 4. Generate suggested questions based on chunks
+        # 4. Save metadata to DB
+        RAGDatabase.add_document(document_id, filename, file_size, page_count)
+        
+        # 5. Generate suggested questions based on chunks
         suggested_questions = generate_suggested_questions(chunks, document_id)
         
         return UploadResponse(

@@ -1,0 +1,846 @@
+2026-06-28 00:34:14,745 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:34:18,648 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:34:32,025 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:34:32,685 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:34:48,624 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:34:52,768 [INFO] RAGApplication: HEAD /health - Status: 405 - Completed in: 2.10ms
+2026-06-28 00:34:52,774 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.88ms
+2026-06-28 00:35:48,457 [INFO] RAGApplication: GET / - Status: 200 - Completed in: 2.12ms
+2026-06-28 00:35:48,675 [INFO] RAGApplication: GET /favicon.ico - Status: 404 - Completed in: 0.93ms
+2026-06-28 00:37:12,107 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:37:28,336 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:37:29,393 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:37:43,578 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:37:55,155 [INFO] RAGApplication: HEAD /health - Status: 405 - Completed in: 1.48ms
+2026-06-28 00:37:55,177 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 18.92ms
+2026-06-28 00:38:11,484 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 6.05ms
+2026-06-28 00:38:11,518 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 30.05ms
+2026-06-28 00:38:11,522 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 43.34ms
+2026-06-28 00:38:11,531 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.68ms
+2026-06-28 00:38:50,582 [INFO] RAGApplication: OPTIONS /upload - Status: 200 - Completed in: 0.98ms
+2026-06-28 00:38:53,884 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:53,885 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-28 00:38:53,938 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:54,255 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:54,316 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:54,347 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-28 00:38:54,621 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:54,678 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:54,941 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:55,019 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-28 00:38:55,352 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:55,436 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:55,753 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:55,817 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:56,129 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 00:38:56,396 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:56,458 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:57,603 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 00:38:57,892 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 00:38:58,182 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 00:38:58,458 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 00:38:58,714 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:58,776 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:59,092 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:59,160 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:59,425 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:59,479 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 00:38:59,747 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:38:59,798 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 00:39:00,093 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-28 00:39:00,359 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-28 00:39:01,014 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 00:39:01,069 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-28 00:39:01,432 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-28 00:39:02,767 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-28 00:39:02,768 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-28 00:39:02,768 [INFO] faiss.loader: Loading faiss.
+2026-06-28 00:39:03,571 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-28 00:39:05,972 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 00:39:06,070 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 15476.05ms
+2026-06-28 00:39:06,091 [INFO] RAGApplication: OPTIONS /conversations - Status: 200 - Completed in: 3.45ms
+2026-06-28 00:39:06,103 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 17.19ms
+2026-06-28 00:39:06,123 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 11.49ms
+2026-06-28 00:39:06,291 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 32.19ms
+2026-06-28 00:39:14,832 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.97ms
+2026-06-28 00:39:14,845 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 7.01ms
+2026-06-28 00:39:16,605 [INFO] RAGApplication: GET /conversations/18e858ee6e9a4583b8220e18fc29eedd - Status: 200 - Completed in: 2.04ms
+2026-06-28 00:39:35,210 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 6.14ms
+2026-06-28 00:39:35,227 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 8.48ms
+2026-06-28 00:39:35,246 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.92ms
+2026-06-28 00:40:19,804 [INFO] RAGApplication: GET /conversations/18e858ee6e9a4583b8220e18fc29eedd - Status: 200 - Completed in: 3.35ms
+2026-06-28 00:40:19,844 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 4.02ms
+2026-06-28 00:40:22,722 [INFO] RAGApplication: OPTIONS /ask - Status: 200 - Completed in: 0.95ms
+2026-06-28 00:40:24,088 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 00:40:24,139 [INFO] RAGApplication: POST /ask - Status: 200 - Completed in: 1408.59ms
+2026-06-28 00:41:07,179 [INFO] RAGApplication: OPTIONS /summary - Status: 200 - Completed in: 0.62ms
+2026-06-28 00:41:09,289 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 00:41:09,292 [INFO] RAGApplication: POST /summary - Status: 200 - Completed in: 2108.92ms
+2026-06-28 00:41:14,694 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.62ms
+2026-06-28 00:41:14,705 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 5.09ms
+2026-06-28 00:41:14,729 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 9.18ms
+2026-06-28 00:41:19,864 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 4.69ms
+2026-06-28 00:41:19,946 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 34.71ms
+2026-06-28 00:41:24,720 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.81ms
+2026-06-28 00:41:24,736 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 7.05ms
+2026-06-28 00:41:24,755 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 8.07ms
+2026-06-28 00:44:24,601 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 16.17ms
+2026-06-28 00:44:24,603 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 17.86ms
+2026-06-28 00:44:24,642 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.12ms
+2026-06-28 00:45:11,074 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.80ms
+2026-06-28 00:45:11,082 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.32ms
+2026-06-28 00:45:27,926 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 1.93ms
+2026-06-28 00:45:27,932 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.27ms
+2026-06-28 00:45:45,595 [INFO] RAGApplication: OPTIONS /documents/7457e9b28e9f4afa8953d88f45328330 - Status: 200 - Completed in: 0.46ms
+2026-06-28 00:45:45,616 [INFO] RAGApplication: DELETE /documents/7457e9b28e9f4afa8953d88f45328330 - Status: 200 - Completed in: 10.63ms
+2026-06-28 00:45:45,640 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 16.54ms
+2026-06-28 00:45:45,651 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.61ms
+2026-06-28 00:45:47,236 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.12ms
+2026-06-28 00:45:47,244 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.77ms
+2026-06-28 00:46:01,270 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.52ms
+2026-06-28 00:46:01,291 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.70ms
+2026-06-28 00:48:15,591 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.16ms
+2026-06-28 00:48:15,593 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 5.53ms
+2026-06-28 00:48:15,598 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 1.67ms
+2026-06-28 00:48:15,601 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.23ms
+2026-06-28 00:48:15,611 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 1.14ms
+2026-06-28 00:48:15,614 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 1.50ms
+2026-06-28 00:48:25,670 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.46ms
+2026-06-28 00:48:25,678 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.15ms
+2026-06-28 00:49:09,871 [INFO] RAGApplication: HEAD /health - Status: 405 - Completed in: 2.41ms
+2026-06-28 00:49:09,877 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.61ms
+2026-06-28 00:53:49,325 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:58:37,486 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:59:17,093 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:59:18,345 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 00:59:32,634 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:02:35,866 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:03:02,556 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:03:03,828 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:03:20,578 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:03:31,192 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:03:43,435 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:03:44,364 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:04:00,706 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:04:13,937 [INFO] RAGApplication: HEAD /health - Status: 405 - Completed in: 1.33ms
+2026-06-28 01:04:13,942 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.22ms
+2026-06-28 01:04:41,770 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 7.05ms
+2026-06-28 01:04:41,776 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 14.64ms
+2026-06-28 01:04:41,783 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 8.06ms
+2026-06-28 01:04:41,793 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.39ms
+2026-06-28 01:04:41,800 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 12.62ms
+2026-06-28 01:04:41,805 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.28ms
+2026-06-28 01:05:08,740 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:05:20,986 [INFO] RAGApplication: GET /settings - Status: 200 - Completed in: 3.05ms
+2026-06-28 01:05:24,573 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:05:26,036 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:05:46,947 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:06:14,178 [INFO] RAGApplication: OPTIONS /upload - Status: 200 - Completed in: 0.95ms
+2026-06-28 01:06:16,273 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:16,335 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:16,733 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:16,779 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:16,783 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-28 01:06:17,054 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:17,055 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-28 01:06:17,103 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:17,399 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:17,449 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-28 01:06:17,868 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:17,909 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:18,176 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:18,220 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:18,499 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:06:18,763 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:18,810 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:19,629 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:06:19,932 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:06:20,248 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:06:20,589 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:06:20,894 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:20,949 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:21,374 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:21,419 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:21,699 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:21,741 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:22,015 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:22,078 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:22,413 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-28 01:06:22,697 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-28 01:06:23,131 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:06:23,173 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-28 01:06:23,439 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-28 01:06:24,083 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-28 01:06:24,083 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-28 01:06:24,083 [INFO] faiss.loader: Loading faiss.
+2026-06-28 01:06:24,328 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-28 01:06:26,124 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:06:26,182 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 11995.83ms
+2026-06-28 01:06:26,200 [INFO] RAGApplication: OPTIONS /conversations - Status: 200 - Completed in: 6.59ms
+2026-06-28 01:06:26,235 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 42.70ms
+2026-06-28 01:06:26,239 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 31.98ms
+2026-06-28 01:06:26,288 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 25.79ms
+2026-06-28 01:06:26,333 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.30ms
+2026-06-28 01:06:29,897 [INFO] RAGApplication: OPTIONS /ask - Status: 200 - Completed in: 1.06ms
+2026-06-28 01:06:31,145 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:06:31,214 [INFO] RAGApplication: POST /ask - Status: 200 - Completed in: 1312.05ms
+2026-06-28 01:06:31,523 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 72.60ms
+2026-06-28 01:06:31,539 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.31ms
+2026-06-28 01:06:38,149 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 5.17ms
+2026-06-28 01:06:38,168 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 7.07ms
+2026-06-28 01:06:46,184 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:06:46,186 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 1957.50ms
+2026-06-28 01:06:46,230 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 33.31ms
+2026-06-28 01:06:46,264 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 26.24ms
+2026-06-28 01:06:46,270 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 75.46ms
+2026-06-28 01:06:46,294 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.73ms
+2026-06-28 01:06:49,819 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:06:49,846 [INFO] RAGApplication: POST /ask - Status: 200 - Completed in: 1272.99ms
+2026-06-28 01:06:50,066 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 18.56ms
+2026-06-28 01:06:50,085 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.41ms
+2026-06-28 01:06:50,368 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.19ms
+2026-06-28 01:06:50,377 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.95ms
+2026-06-28 01:06:52,740 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 6.11ms
+2026-06-28 01:06:52,787 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 33.78ms
+2026-06-28 01:06:52,812 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.86ms
+2026-06-28 01:06:54,302 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.07ms
+2026-06-28 01:06:54,311 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.46ms
+2026-06-28 01:06:56,592 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 9.21ms
+2026-06-28 01:06:56,661 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 40.51ms
+2026-06-28 01:06:56,694 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.74ms
+2026-06-28 01:06:58,191 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.11ms
+2026-06-28 01:06:58,203 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.29ms
+2026-06-28 01:07:08,948 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 4.85ms
+2026-06-28 01:07:08,986 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 30.00ms
+2026-06-28 01:07:09,007 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 5.93ms
+2026-06-28 01:07:14,906 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 1.86ms
+2026-06-28 01:07:14,914 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.35ms
+2026-06-28 01:07:18,461 [INFO] RAGApplication: OPTIONS /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 200 - Completed in: 1.05ms
+2026-06-28 01:07:18,511 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 200 - Completed in: 45.61ms
+2026-06-28 01:07:18,567 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 44.22ms
+2026-06-28 01:07:21,124 [INFO] RAGApplication: OPTIONS /documents/3f36cb331d124e2985b418e4e1c643eb - Status: 200 - Completed in: 0.72ms
+2026-06-28 01:07:21,157 [INFO] RAGApplication: DELETE /documents/3f36cb331d124e2985b418e4e1c643eb - Status: 200 - Completed in: 24.24ms
+2026-06-28 01:07:21,213 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 41.18ms
+2026-06-28 01:07:28,630 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.00ms
+2026-06-28 01:07:28,636 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.35ms
+2026-06-28 01:07:37,381 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.49ms
+2026-06-28 01:07:37,388 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.56ms
+2026-06-28 01:08:53,883 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.14ms
+2026-06-28 01:08:53,892 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.01ms
+2026-06-28 01:11:34,992 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 404 - Completed in: 30.50ms
+2026-06-28 01:11:36,695 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 404 - Completed in: 1.91ms
+2026-06-28 01:11:38,905 [INFO] RAGApplication: DELETE /documents/3f36cb331d124e2985b418e4e1c643eb - Status: 404 - Completed in: 2.01ms
+2026-06-28 01:11:40,217 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.56ms
+2026-06-28 01:11:40,224 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.81ms
+2026-06-28 01:11:55,737 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 404 - Completed in: 4.03ms
+2026-06-28 01:11:57,878 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 404 - Completed in: 1.75ms
+2026-06-28 01:11:59,062 [INFO] RAGApplication: GET /conversations/eb42860536a748d684f3f53752ae0daf - Status: 404 - Completed in: 3.07ms
+2026-06-28 01:11:59,533 [INFO] RAGApplication: GET /conversations/eb42860536a748d684f3f53752ae0daf - Status: 404 - Completed in: 2.36ms
+2026-06-28 01:12:01,589 [INFO] RAGApplication: OPTIONS /conversations/eb42860536a748d684f3f53752ae0daf - Status: 200 - Completed in: 0.48ms
+2026-06-28 01:12:01,594 [INFO] RAGApplication: DELETE /conversations/eb42860536a748d684f3f53752ae0daf - Status: 404 - Completed in: 2.02ms
+2026-06-28 01:12:08,619 [INFO] RAGApplication: DELETE /conversations/eb42860536a748d684f3f53752ae0daf - Status: 404 - Completed in: 1.67ms
+2026-06-28 01:12:11,097 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.64ms
+2026-06-28 01:12:11,106 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.13ms
+2026-06-28 01:14:37,294 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 404 - Completed in: 2.75ms
+2026-06-28 01:14:39,505 [INFO] RAGApplication: DELETE /conversations/eb42860536a748d684f3f53752ae0daf - Status: 404 - Completed in: 4.27ms
+2026-06-28 01:14:41,502 [INFO] RAGApplication: OPTIONS /conversations/1f4550a230114fa383904eea5aa5321c - Status: 200 - Completed in: 1.16ms
+2026-06-28 01:14:41,730 [INFO] RAGApplication: DELETE /conversations/1f4550a230114fa383904eea5aa5321c - Status: 404 - Completed in: 223.57ms
+2026-06-28 01:14:47,490 [INFO] RAGApplication: DELETE /documents/3f36cb331d124e2985b418e4e1c643eb - Status: 404 - Completed in: 5.78ms
+2026-06-28 01:14:49,242 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 404 - Completed in: 2.33ms
+2026-06-28 01:14:52,263 [INFO] RAGApplication: DELETE /conversations/eb42860536a748d684f3f53752ae0daf - Status: 404 - Completed in: 2.77ms
+2026-06-28 01:18:02,962 [INFO] RAGApplication: OPTIONS /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 200 - Completed in: 0.91ms
+2026-06-28 01:18:02,970 [INFO] RAGApplication: DELETE /documents/2bbbcc1e250e447d9ad89e73054fc868 - Status: 404 - Completed in: 3.85ms
+2026-06-28 01:18:02,981 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.10ms
+2026-06-28 01:18:02,991 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.91ms
+2026-06-28 01:18:14,251 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.25ms
+2026-06-28 01:18:14,256 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 1.54ms
+2026-06-28 01:18:14,263 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.97ms
+2026-06-28 01:18:14,271 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.01ms
+2026-06-28 01:18:19,015 [INFO] RAGApplication: OPTIONS /upload - Status: 200 - Completed in: 0.89ms
+2026-06-28 01:18:21,259 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:18:21,282 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 2260.93ms
+2026-06-28 01:18:21,340 [INFO] RAGApplication: OPTIONS /conversations - Status: 200 - Completed in: 41.83ms
+2026-06-28 01:18:21,347 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 55.17ms
+2026-06-28 01:18:21,357 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 64.59ms
+2026-06-28 01:18:21,375 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 21.77ms
+2026-06-28 01:18:21,398 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 31.64ms
+2026-06-28 01:18:21,413 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 7.19ms
+2026-06-28 01:18:21,463 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.18ms
+2026-06-28 01:18:21,469 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.62ms
+2026-06-28 01:18:21,488 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.66ms
+2026-06-28 01:18:41,626 [INFO] RAGApplication: OPTIONS /ask - Status: 200 - Completed in: 0.78ms
+2026-06-28 01:18:42,772 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:18:42,806 [INFO] RAGApplication: POST /ask - Status: 200 - Completed in: 1174.25ms
+2026-06-28 01:18:42,933 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 38.92ms
+2026-06-28 01:18:42,975 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 5.35ms
+2026-06-28 01:18:49,573 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 5.11ms
+2026-06-28 01:18:49,581 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 12.24ms
+2026-06-28 01:18:49,592 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 10.98ms
+2026-06-28 01:18:49,609 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.89ms
+2026-06-28 01:19:00,766 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:19:00,769 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 1726.47ms
+2026-06-28 01:19:00,813 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 34.41ms
+2026-06-28 01:19:00,838 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 20.19ms
+2026-06-28 01:19:00,864 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 87.28ms
+2026-06-28 01:19:00,893 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 45.83ms
+2026-06-28 01:19:00,895 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 14.55ms
+2026-06-28 01:19:00,926 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.91ms
+2026-06-28 01:19:00,948 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 8.98ms
+2026-06-28 01:19:00,989 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 19.16ms
+2026-06-28 01:19:09,447 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 6.80ms
+2026-06-28 01:19:09,453 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 13.83ms
+2026-06-28 01:19:09,469 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 7.15ms
+2026-06-28 01:19:09,481 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 18.87ms
+2026-06-28 01:19:15,814 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 3.94ms
+2026-06-28 01:19:15,845 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 24.44ms
+2026-06-28 01:19:15,855 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.67ms
+2026-06-28 01:19:15,864 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.16ms
+2026-06-28 01:19:15,879 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.73ms
+2026-06-28 01:19:17,620 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.47ms
+2026-06-28 01:19:17,645 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.68ms
+2026-06-28 01:19:21,571 [INFO] RAGApplication: OPTIONS /documents/08454305950643deaf49c115865af7b8 - Status: 200 - Completed in: 0.81ms
+2026-06-28 01:19:21,598 [INFO] RAGApplication: DELETE /documents/08454305950643deaf49c115865af7b8 - Status: 200 - Completed in: 17.82ms
+2026-06-28 01:19:21,632 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 27.89ms
+2026-06-28 01:19:21,644 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 7.09ms
+2026-06-28 01:19:21,649 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 9.33ms
+2026-06-28 01:19:21,667 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.50ms
+2026-06-28 01:19:24,634 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.18ms
+2026-06-28 01:19:24,661 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.10ms
+2026-06-28 01:19:26,803 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.96ms
+2026-06-28 01:19:26,805 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 5.34ms
+2026-06-28 01:19:26,812 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.43ms
+2026-06-28 01:19:26,817 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 1.82ms
+2026-06-28 01:19:30,319 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 3.93ms
+2026-06-28 01:19:30,352 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 21.28ms
+2026-06-28 01:19:30,366 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 9.25ms
+2026-06-28 01:19:30,378 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 16.62ms
+2026-06-28 01:19:30,399 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 5.23ms
+2026-06-28 01:20:12,641 [INFO] RAGApplication: POST /ask - Status: 200 - Completed in: 192.30ms
+2026-06-28 01:20:13,054 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 19.73ms
+2026-06-28 01:20:13,064 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.58ms
+2026-06-28 01:20:17,001 [INFO] RAGApplication: OPTIONS /summary - Status: 200 - Completed in: 0.99ms
+2026-06-28 01:20:19,045 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:20:19,049 [INFO] RAGApplication: POST /summary - Status: 200 - Completed in: 2043.58ms
+2026-06-28 01:20:19,318 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.97ms
+2026-06-28 01:20:19,324 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 11.78ms
+2026-06-28 01:20:19,338 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.52ms
+2026-06-28 01:20:19,357 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.27ms
+2026-06-28 01:20:26,280 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 6.11ms
+2026-06-28 01:20:26,324 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 34.25ms
+2026-06-28 01:20:26,336 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.72ms
+2026-06-28 01:20:26,352 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.12ms
+2026-06-28 01:20:26,362 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.70ms
+2026-06-28 01:20:30,539 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:20:30,550 [INFO] RAGApplication: POST /summary - Status: 200 - Completed in: 1926.25ms
+2026-06-28 01:23:11,277 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.31ms
+2026-06-28 01:23:11,282 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 8.92ms
+2026-06-28 01:23:11,287 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 5.15ms
+2026-06-28 01:23:11,298 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.88ms
+2026-06-28 01:23:14,222 [INFO] RAGApplication: OPTIONS /documents/eef671c31e7243c0bb820c76547692f2 - Status: 200 - Completed in: 1.11ms
+2026-06-28 01:23:14,261 [INFO] RAGApplication: DELETE /documents/eef671c31e7243c0bb820c76547692f2 - Status: 200 - Completed in: 32.42ms
+2026-06-28 01:23:14,353 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 77.22ms
+2026-06-28 01:23:14,373 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 91.95ms
+2026-06-28 01:23:14,434 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 61.46ms
+2026-06-28 01:23:14,465 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 43.56ms
+2026-06-28 01:23:14,967 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.29ms
+2026-06-28 01:23:14,974 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 1.71ms
+2026-06-28 01:23:16,492 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.34ms
+2026-06-28 01:23:16,497 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 7.53ms
+2026-06-28 01:23:16,508 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.79ms
+2026-06-28 01:23:16,512 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.99ms
+2026-06-28 01:25:27,645 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:25:49,014 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:25:52,486 [INFO] RAGApplication: HEAD /health - Status: 405 - Completed in: 5.80ms
+2026-06-28 01:25:52,495 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 4.87ms
+2026-06-28 01:26:05,601 [INFO] RAGApplication: HEAD /stats - Status: 405 - Completed in: 0.67ms
+2026-06-28 01:26:05,608 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 1.90ms
+2026-06-28 01:31:51,532 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:32:13,850 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:32:14,794 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:32:34,084 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 01:32:34,393 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 5.82ms
+2026-06-28 01:32:34,404 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.08ms
+2026-06-28 01:32:38,357 [INFO] RAGApplication: OPTIONS /upload - Status: 200 - Completed in: 0.84ms
+2026-06-28 01:32:40,919 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:41,002 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:41,411 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:41,412 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-28 01:32:41,467 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:41,470 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-28 01:32:41,744 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:41,812 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:42,197 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:42,251 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-28 01:32:42,684 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:42,740 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:43,007 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:43,075 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:43,478 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:32:43,788 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:43,843 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:44,996 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:32:45,270 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:32:45,560 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:32:45,878 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 01:32:46,199 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:46,245 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:46,678 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:46,729 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:47,004 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:47,052 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:47,327 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:47,395 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:47,803 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-28 01:32:48,112 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-28 01:32:48,573 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 01:32:48,641 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-28 01:32:48,998 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-28 01:32:49,855 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-28 01:32:49,855 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-28 01:32:49,855 [INFO] faiss.loader: Loading faiss.
+2026-06-28 01:32:50,103 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-28 01:32:51,650 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 01:32:51,695 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 13331.43ms
+2026-06-28 01:32:51,716 [INFO] RAGApplication: OPTIONS /conversations - Status: 200 - Completed in: 0.77ms
+2026-06-28 01:32:51,733 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 38.78ms
+2026-06-28 01:32:51,743 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 22.77ms
+2026-06-28 01:32:51,777 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 39.30ms
+2026-06-28 01:32:51,779 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 29.54ms
+2026-06-28 01:32:51,813 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 25.35ms
+2026-06-28 01:32:51,817 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 27.95ms
+2026-06-28 01:32:51,830 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.21ms
+2026-06-28 01:32:51,851 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.40ms
+2026-06-28 01:32:51,863 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 23.44ms
+2026-06-28 01:32:51,870 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 13.49ms
+2026-06-28 01:32:51,897 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 14.68ms
+2026-06-28 01:32:51,906 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.91ms
+2026-06-28 01:32:51,917 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 47.13ms
+2026-06-28 01:32:51,923 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 8.94ms
+2026-06-28 01:32:51,932 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.66ms
+2026-06-28 01:32:58,752 [INFO] RAGApplication: OPTIONS /documents/4d5f427c4636483faa7e6e0ce0cd8cd4 - Status: 200 - Completed in: 1.01ms
+2026-06-28 01:32:58,833 [INFO] RAGApplication: DELETE /documents/4d5f427c4636483faa7e6e0ce0cd8cd4 - Status: 200 - Completed in: 58.41ms
+2026-06-28 01:32:58,891 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 47.13ms
+2026-06-28 01:32:58,897 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 50.84ms
+2026-06-28 01:32:58,920 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 13.99ms
+2026-06-28 01:32:58,924 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 19.74ms
+2026-06-28 01:33:00,586 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.36ms
+2026-06-28 01:33:00,597 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.15ms
+2026-06-28 01:33:01,476 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 5.13ms
+2026-06-28 01:33:01,482 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 10.44ms
+2026-06-28 01:33:01,488 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.31ms
+2026-06-28 01:33:01,499 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.55ms
+2026-06-28 01:34:56,544 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.57ms
+2026-06-28 01:34:56,553 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 2.79ms
+2026-06-28 01:42:32,873 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 44.59ms
+2026-06-28 01:42:32,905 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 76.32ms
+2026-06-28 01:42:32,914 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 17.14ms
+2026-06-28 01:42:32,931 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 11.28ms
+2026-06-28 01:42:32,944 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 16.53ms
+2026-06-28 01:42:32,975 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.48ms
+2026-06-28 01:42:40,911 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.80ms
+2026-06-28 01:42:40,921 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.29ms
+2026-06-28 01:42:41,542 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.97ms
+2026-06-28 01:42:41,551 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.33ms
+2026-06-28 01:42:42,579 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.76ms
+2026-06-28 01:42:42,588 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.63ms
+2026-06-28 01:42:43,208 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 7.74ms
+2026-06-28 01:42:43,210 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 9.56ms
+2026-06-28 01:42:43,216 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.90ms
+2026-06-28 01:42:43,228 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.55ms
+2026-06-28 01:42:44,185 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.16ms
+2026-06-28 01:42:44,199 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 1.90ms
+2026-06-28 01:42:47,308 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 17.47ms
+2026-06-28 01:42:47,312 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 23.46ms
+2026-06-28 01:42:47,319 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.55ms
+2026-06-28 01:42:47,324 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.66ms
+2026-06-28 10:09:33,282 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 869.83ms
+2026-06-28 10:09:33,331 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 915.04ms
+2026-06-28 10:09:33,462 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 131.48ms
+2026-06-28 10:09:33,469 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 119.62ms
+2026-06-28 10:09:33,475 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 93.51ms
+2026-06-28 10:09:33,495 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.41ms
+2026-06-28 10:09:57,899 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 7.85ms
+2026-06-28 10:09:57,928 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 11.63ms
+2026-06-28 10:10:25,104 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 19.17ms
+2026-06-28 10:10:25,145 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 53.93ms
+2026-06-28 10:10:25,195 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 11.05ms
+2026-06-28 10:10:25,240 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 5.11ms
+2026-06-28 10:10:25,543 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 20.55ms
+2026-06-28 10:10:25,614 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.46ms
+2026-06-28 10:10:26,789 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 24.11ms
+2026-06-28 10:10:26,793 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 21.93ms
+2026-06-28 10:10:26,835 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 17.26ms
+2026-06-28 10:10:26,873 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 26.52ms
+2026-06-28 10:14:49,619 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 12.64ms
+2026-06-28 10:14:49,627 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 17.56ms
+2026-06-28 10:14:49,651 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 5.67ms
+2026-06-28 10:14:49,657 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 22.36ms
+2026-06-28 10:14:49,672 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.61ms
+2026-06-28 10:14:49,708 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.80ms
+2026-06-28 10:14:55,356 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 4.65ms
+2026-06-28 10:14:55,380 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.06ms
+2026-06-28 10:14:55,894 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.73ms
+2026-06-28 10:14:55,919 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.67ms
+2026-06-28 10:14:56,611 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 10.93ms
+2026-06-28 10:14:56,617 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 13.81ms
+2026-06-28 10:14:56,630 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 13.56ms
+2026-06-28 10:14:56,656 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 5.80ms
+2026-06-28 10:15:05,042 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 55.81ms
+2026-06-28 10:15:05,049 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 64.58ms
+2026-06-28 10:15:05,072 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 16.07ms
+2026-06-28 10:15:05,164 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 77.79ms
+2026-06-28 10:15:05,181 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 112.99ms
+2026-06-28 10:15:05,236 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 51.44ms
+2026-06-28 10:20:22,041 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 25.05ms
+2026-06-28 10:20:22,045 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 24.70ms
+2026-06-28 10:20:22,072 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 16.34ms
+2026-06-28 10:20:22,076 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 17.73ms
+2026-06-28 10:20:22,113 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 12.81ms
+2026-06-28 10:20:22,169 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.15ms
+2026-06-28 10:29:29,617 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 50.64ms
+2026-06-28 10:29:29,667 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 102.65ms
+2026-06-28 10:31:17,640 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:32:14,629 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:32:16,809 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:32:50,842 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:32:52,760 [INFO] RAGApplication: HEAD /health - Status: 405 - Completed in: 2.47ms
+2026-06-28 10:32:52,874 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 102.44ms
+2026-06-28 10:33:08,883 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 20.70ms
+2026-06-28 10:33:08,888 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 22.98ms
+2026-06-28 10:33:08,909 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 7.83ms
+2026-06-28 10:33:08,921 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 28.64ms
+2026-06-28 10:33:09,040 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.25ms
+2026-06-28 10:33:09,061 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 12.78ms
+2026-06-28 10:35:40,667 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:36:06,321 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:36:07,909 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:36:38,360 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:36:52,089 [INFO] RAGApplication: HEAD /health - Status: 405 - Completed in: 2.61ms
+2026-06-28 10:36:52,098 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 5.50ms
+2026-06-28 10:37:15,093 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 15.37ms
+2026-06-28 10:37:15,097 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 26.88ms
+2026-06-28 10:37:15,127 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 23.05ms
+2026-06-28 10:37:15,140 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 28.38ms
+2026-06-28 10:37:15,153 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 14.01ms
+2026-06-28 10:37:15,163 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.92ms
+2026-06-28 10:38:19,477 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:54:05,981 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:54:38,353 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:55:02,941 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:55:04,663 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:55:32,171 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-28 10:56:25,436 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 38.27ms
+2026-06-28 10:56:25,447 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 45.88ms
+2026-06-28 10:56:25,470 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 15.66ms
+2026-06-28 10:56:25,490 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 26.03ms
+2026-06-28 10:56:25,504 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 21.51ms
+2026-06-28 10:56:25,527 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 8.97ms
+2026-06-28 10:56:32,533 [INFO] RAGApplication: OPTIONS /upload - Status: 200 - Completed in: 1.41ms
+2026-06-28 10:56:36,617 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:36,620 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-28 10:56:36,679 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:36,951 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:37,016 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:37,039 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-28 10:56:37,303 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:37,354 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:37,611 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:37,667 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-28 10:56:37,961 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:38,013 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:38,287 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:38,335 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:38,598 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 10:56:38,934 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:39,000 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:40,219 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 10:56:40,489 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 10:56:40,759 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 10:56:41,008 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-28 10:56:41,272 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:41,327 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:41,585 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:41,635 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:41,900 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:41,965 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:42,243 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:42,306 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:42,592 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-28 10:56:42,846 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-28 10:56:43,548 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-28 10:56:43,593 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-28 10:56:43,888 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-28 10:56:45,229 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-28 10:56:45,231 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-28 10:56:45,231 [INFO] faiss.loader: Loading faiss.
+2026-06-28 10:56:45,461 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-28 10:56:48,807 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 10:56:48,906 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 16359.41ms
+2026-06-28 10:56:48,946 [INFO] RAGApplication: OPTIONS /conversations - Status: 200 - Completed in: 10.36ms
+2026-06-28 10:56:48,991 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 59.31ms
+2026-06-28 10:56:48,998 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 70.30ms
+2026-06-28 10:56:49,018 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 13.81ms
+2026-06-28 10:56:49,080 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 114.48ms
+2026-06-28 10:56:49,153 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 46.37ms
+2026-06-28 10:56:49,224 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 11.14ms
+2026-06-28 10:56:49,230 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 10.08ms
+2026-06-28 10:56:49,271 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.37ms
+2026-06-28 10:56:51,283 [INFO] RAGApplication: OPTIONS /ask - Status: 200 - Completed in: 1.38ms
+2026-06-28 10:56:53,879 [INFO] RAGApplication: POST /ask - Status: 200 - Completed in: 2583.64ms
+2026-06-28 10:56:54,012 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 52.99ms
+2026-06-28 10:56:54,048 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 7.46ms
+2026-06-28 10:56:58,571 [INFO] RAGApplication: POST /ask - Status: 200 - Completed in: 1833.18ms
+2026-06-28 10:56:58,671 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 41.12ms
+2026-06-28 10:56:58,703 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.73ms
+2026-06-28 10:59:08,426 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 16.96ms
+2026-06-28 10:59:08,432 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 22.20ms
+2026-06-29 15:11:17,311 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-29 15:11:27,084 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-29 15:12:42,938 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-29 15:12:44,027 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-29 15:13:08,117 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-06-29 16:41:57,392 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 321.98ms
+2026-06-29 16:44:15,149 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 349.08ms
+2026-06-29 16:44:15,167 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 365.61ms
+2026-06-29 16:44:15,170 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 14.87ms
+2026-06-29 16:44:15,175 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 12.82ms
+2026-06-29 16:44:15,180 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.63ms
+2026-06-29 16:44:15,231 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.23ms
+2026-07-02 11:15:19,365 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 11:16:07,585 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 11:16:08,309 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 11:16:22,843 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 11:56:37,446 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 447.28ms
+2026-07-02 11:56:37,474 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 471.74ms
+2026-07-02 11:56:37,490 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 22.55ms
+2026-07-02 11:56:37,496 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 17.55ms
+2026-07-02 11:56:37,504 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 15.54ms
+2026-07-02 11:56:37,590 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.39ms
+2026-07-02 12:03:22,666 [INFO] RAGApplication: OPTIONS /upload - Status: 200 - Completed in: 15.94ms
+2026-07-02 12:03:29,370 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:29,378 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-02 12:03:29,470 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:29,815 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:29,896 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:29,917 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-07-02 12:03:30,236 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:30,322 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:30,642 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:30,744 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-07-02 12:03:31,143 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:31,230 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:31,605 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:31,717 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:32,125 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 12:03:32,491 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:32,571 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:33,825 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 12:03:34,165 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 12:03:34,483 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 12:03:34,791 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 12:03:35,091 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:35,192 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:35,504 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:35,586 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:35,974 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:36,109 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:36,416 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:36,583 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:36,938 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-02 12:03:37,267 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-02 12:03:37,808 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 12:03:37,883 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-07-02 12:03:38,212 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-07-02 12:03:38,773 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-07-02 12:03:38,774 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-07-02 12:03:38,774 [INFO] faiss.loader: Loading faiss.
+2026-07-02 12:03:39,515 [INFO] faiss.loader: Successfully loaded faiss.
+2026-07-02 12:03:42,534 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-02 12:03:42,584 [INFO] RAGApplication: POST /upload - Status: 200 - Completed in: 19807.36ms
+2026-07-02 12:03:42,611 [INFO] RAGApplication: OPTIONS /conversations - Status: 200 - Completed in: 1.90ms
+2026-07-02 12:03:42,642 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 32.21ms
+2026-07-02 12:03:42,647 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 28.43ms
+2026-07-02 12:03:42,659 [INFO] RAGApplication: POST /conversations - Status: 200 - Completed in: 6.94ms
+2026-07-02 12:03:42,689 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 19.02ms
+2026-07-02 12:03:42,703 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.27ms
+2026-07-02 12:03:42,747 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.22ms
+2026-07-02 12:03:42,789 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.52ms
+2026-07-02 12:03:42,815 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 1.72ms
+2026-07-02 12:04:59,108 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:05:17,199 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:23:49,062 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:25:14,849 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:27:07,834 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:27:50,114 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:27:51,099 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:28:13,038 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:28:17,552 [INFO] RAGApplication: GET / - Status: 200 - Completed in: 5.37ms
+2026-07-02 12:28:17,919 [INFO] RAGApplication: GET /favicon.ico - Status: 404 - Completed in: 1.39ms
+2026-07-02 12:30:08,463 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:30:31,549 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:30:33,236 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:30:51,117 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 868.43ms
+2026-07-02 12:30:51,273 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 1015.14ms
+2026-07-02 12:30:51,380 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 26.98ms
+2026-07-02 12:30:51,390 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 32.48ms
+2026-07-02 12:30:51,681 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 111.35ms
+2026-07-02 12:30:51,717 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 8.32ms
+2026-07-02 12:30:58,381 [INFO] RAGApplication: OPTIONS /documents/3b5e416ea1e9404ea11b2c99f5132100 - Status: 200 - Completed in: 4.62ms
+2026-07-02 12:30:58,478 [INFO] RAGApplication: DELETE /documents/3b5e416ea1e9404ea11b2c99f5132100 - Status: 200 - Completed in: 87.40ms
+2026-07-02 12:30:58,604 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 97.41ms
+2026-07-02 12:30:58,673 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 50.67ms
+2026-07-02 12:30:58,682 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 18.93ms
+2026-07-02 12:30:58,699 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.41ms
+2026-07-02 12:31:00,819 [INFO] RAGApplication: OPTIONS /documents/d2931941d6d4432f8d988b0d77561463 - Status: 200 - Completed in: 1.54ms
+2026-07-02 12:31:00,895 [INFO] RAGApplication: DELETE /documents/d2931941d6d4432f8d988b0d77561463 - Status: 200 - Completed in: 60.97ms
+2026-07-02 12:31:01,009 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 69.78ms
+2026-07-02 12:31:01,025 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 98.55ms
+2026-07-02 12:31:01,040 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 7.80ms
+2026-07-02 12:31:01,053 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.94ms
+2026-07-02 12:31:05,595 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 12.39ms
+2026-07-02 12:31:05,646 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.89ms
+2026-07-02 12:31:06,848 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 6.74ms
+2026-07-02 12:31:06,884 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.35ms
+2026-07-02 12:31:32,253 [INFO] RAGApplication: Initializing FastAPI Backend Server...
+2026-07-02 12:32:16,417 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 58.25ms
+2026-07-02 12:32:16,430 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 59.35ms
+2026-07-02 12:32:16,465 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 36.61ms
+2026-07-02 12:32:16,496 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 34.08ms
+2026-07-02 12:32:16,512 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 16.69ms
+2026-07-02 12:32:16,538 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 6.81ms
+2026-07-02 12:32:20,390 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 9.57ms
+2026-07-02 12:32:20,392 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 7.69ms
+2026-07-02 12:32:20,413 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 11.50ms
+2026-07-02 12:32:20,423 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 20.15ms
+2026-07-02 12:32:20,474 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.72ms
+2026-07-02 12:32:20,496 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 11.99ms
+2026-07-02 12:33:12,493 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 30.94ms
+2026-07-02 12:33:12,525 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.52ms
+2026-07-02 12:33:13,742 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 3.52ms
+2026-07-02 12:33:13,777 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 15.51ms
+2026-07-02 12:35:48,983 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 32.70ms
+2026-07-02 12:36:19,587 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.84ms
+2026-07-02 12:36:49,906 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.23ms
+2026-07-02 12:37:02,432 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 6.01ms
+2026-07-02 12:37:02,486 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 42.29ms
+2026-07-02 12:37:02,518 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.93ms
+2026-07-02 12:37:02,539 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 11.85ms
+2026-07-02 12:37:02,569 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 12.52ms
+2026-07-02 12:37:02,583 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.88ms
+2026-07-02 12:37:02,590 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.79ms
+2026-07-02 12:37:02,657 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.65ms
+2026-07-02 12:37:32,810 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 219.37ms
+2026-07-02 12:38:02,591 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.17ms
+2026-07-02 12:38:32,891 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.44ms
+2026-07-02 12:39:02,471 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 5.54ms
+2026-07-02 12:39:17,238 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 28.59ms
+2026-07-02 12:39:17,243 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 31.02ms
+2026-07-02 12:39:17,256 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 8.25ms
+2026-07-02 12:39:17,259 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 47.28ms
+2026-07-02 12:39:17,268 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 15.04ms
+2026-07-02 12:39:17,279 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 12.67ms
+2026-07-02 12:39:17,304 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 30.59ms
+2026-07-02 12:39:17,384 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.45ms
+2026-07-02 12:39:47,586 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.53ms
+2026-07-02 12:40:17,892 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.79ms
+2026-07-02 12:40:47,589 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.29ms
+2026-07-02 12:41:17,887 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.60ms
+2026-07-02 12:41:47,601 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 8.03ms
+2026-07-02 12:42:17,890 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.99ms
+2026-07-02 12:43:40,907 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 11.21ms
+2026-07-02 12:44:40,614 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.45ms
+2026-07-02 12:45:40,918 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 4.00ms
+2026-07-02 12:45:53,030 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 4.37ms
+2026-07-02 12:46:17,879 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.50ms
+2026-07-02 12:46:47,587 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 10.14ms
+2026-07-02 12:47:40,965 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 18.36ms
+2026-07-02 12:48:40,606 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 9.04ms
+2026-07-02 12:49:16,316 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 9.39ms
+2026-07-02 12:49:47,601 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.66ms
+2026-07-02 12:50:17,915 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 10.35ms
+2026-07-02 12:50:37,460 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 18.84ms
+2026-07-02 12:50:37,725 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 187.74ms
+2026-07-02 12:50:37,753 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 12.60ms
+2026-07-02 12:50:38,021 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 237.30ms
+2026-07-02 12:50:38,026 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 241.71ms
+2026-07-02 12:50:38,051 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 8.39ms
+2026-07-02 12:50:40,216 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 9.74ms
+2026-07-02 12:50:40,302 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 57.50ms
+2026-07-02 12:51:07,544 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 54.77ms
+2026-07-02 12:51:37,590 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.40ms
+2026-07-02 12:52:07,890 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.27ms
+2026-07-02 12:52:37,598 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.85ms
+2026-07-02 12:53:07,891 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.89ms
+2026-07-02 12:53:37,579 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.33ms
+2026-07-02 12:54:40,913 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 13.49ms
+2026-07-02 12:55:40,582 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.58ms
+2026-07-02 12:55:56,189 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 4.55ms
+2026-07-02 12:55:56,696 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 497.31ms
+2026-07-02 12:55:56,697 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 495.74ms
+2026-07-02 12:55:56,797 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.33ms
+2026-07-02 12:56:20,772 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 4.85ms
+2026-07-02 12:56:20,817 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 6.35ms
+2026-07-02 12:56:20,836 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 5.17ms
+2026-07-02 12:56:20,868 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.21ms
+2026-07-02 12:56:38,425 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 24.02ms
+2026-07-02 12:56:38,430 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 25.01ms
+2026-07-02 12:56:38,447 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 42.05ms
+2026-07-02 12:56:38,460 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 16.70ms
+2026-07-02 12:56:38,540 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 4.88ms
+2026-07-02 12:57:08,597 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 9.69ms
+2026-07-02 12:57:08,628 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 6.83ms
+2026-07-02 12:57:19,368 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 44.14ms
+2026-07-02 12:57:19,391 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 56.02ms
+2026-07-02 12:57:19,425 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 98.15ms
+2026-07-02 12:57:19,448 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 57.06ms
+2026-07-02 12:57:19,469 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 29.34ms
+2026-07-02 12:57:19,556 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 58.29ms
+2026-07-02 12:57:19,599 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 114.31ms
+2026-07-02 12:57:19,664 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 152.78ms
+2026-07-02 12:57:19,720 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 69.63ms
+2026-07-02 12:57:19,773 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 3.48ms
+2026-07-02 12:57:21,011 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 18.27ms
+2026-07-02 12:57:21,084 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 40.18ms
+2026-07-02 12:57:22,143 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 2.62ms
+2026-07-02 12:57:22,249 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 46.55ms
+2026-07-02 12:57:25,126 [INFO] RAGApplication: GET /settings - Status: 200 - Completed in: 78.35ms
+2026-07-02 12:57:32,092 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 20.03ms
+2026-07-02 12:57:32,102 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 26.95ms
+2026-07-02 12:57:32,109 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 4.79ms
+2026-07-02 12:57:32,144 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 19.34ms
+2026-07-02 12:57:47,935 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 5.91ms
+2026-07-02 12:57:47,970 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 5.98ms
+2026-07-02 12:57:49,038 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 14.41ms
+2026-07-02 12:57:49,078 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 16.20ms
+2026-07-02 12:57:50,293 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 22.67ms
+2026-07-02 12:57:50,306 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 27.87ms
+2026-07-02 12:57:50,329 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 18.61ms
+2026-07-02 12:57:50,361 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 16.40ms
+2026-07-02 12:57:51,477 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 5.28ms
+2026-07-02 12:57:51,521 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 2.36ms
+2026-07-02 12:57:52,982 [INFO] RAGApplication: GET /conversations - Status: 200 - Completed in: 54.15ms
+2026-07-02 12:57:52,989 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 62.14ms
+2026-07-02 12:57:53,012 [INFO] RAGApplication: GET /documents - Status: 200 - Completed in: 17.30ms
+2026-07-02 12:57:53,050 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 56.46ms
+2026-07-02 12:58:19,347 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 5.62ms
+2026-07-02 12:58:19,376 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 8.35ms
+2026-07-02 12:58:49,038 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 9.42ms
+2026-07-02 12:58:49,076 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 20.72ms
+2026-07-02 12:59:19,900 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.17ms
+2026-07-02 12:59:19,904 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.44ms
+2026-07-02 12:59:49,902 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.66ms
+2026-07-02 12:59:49,906 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.40ms
+2026-07-02 12:59:53,637 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 7.21ms
+2026-07-02 12:59:53,645 [INFO] RAGApplication: GET /stats - Status: 200 - Completed in: 3.75ms
+2026-07-02 13:00:19,587 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.36ms
+2026-07-02 13:00:49,906 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.22ms
+2026-07-02 13:01:19,626 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.02ms
+2026-07-02 13:02:40,885 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 1.29ms
+2026-07-02 13:03:40,630 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.14ms
+2026-07-02 13:04:40,931 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 3.55ms
+2026-07-02 13:05:40,594 [INFO] RAGApplication: GET /health - Status: 200 - Completed in: 2.95ms

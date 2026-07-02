@@ -29,6 +29,20 @@ export const uploadDocument = (file, onProgress) => {
 };
 
 /**
+ * Deletes a document and its associated FAISS vectorstore.
+ */
+export const deleteDocument = (documentId) => {
+  return apiClient.delete(`/documents/${documentId}`);
+};
+
+/**
+ * Fetch all uploaded documents.
+ */
+export const getDocuments = () => {
+  return apiClient.get('/documents');
+};
+
+/**
  * Generates a summary for the given document_id.
  */
 export const getDocumentSummary = (documentId) => {
@@ -36,19 +50,100 @@ export const getDocumentSummary = (documentId) => {
 };
 
 /**
+ * Fetch all conversations in history.
+ */
+export const getConversations = () => {
+  return apiClient.get('/conversations');
+};
+
+/**
+ * Creates a new conversation.
+ */
+export const createConversation = (documentId, title = 'New Conversation') => {
+  return apiClient.post('/conversations', { document_id: documentId, title });
+};
+
+/**
+ * Fetch details of a single conversation (including messages).
+ */
+export const getConversationDetails = (conversationId) => {
+  return apiClient.get(`/conversations/${conversationId}`);
+};
+
+/**
+ * Renames a conversation.
+ */
+export const renameConversation = (conversationId, title) => {
+  return apiClient.put(`/conversations/${conversationId}/rename`, { title });
+};
+
+/**
+ * Deletes a conversation.
+ */
+export const deleteConversation = (conversationId) => {
+  return apiClient.delete(`/conversations/${conversationId}`);
+};
+
+/**
+ * Sends message feedback (like, dislike, or null).
+ */
+export const sendFeedback = (conversationId, messageIndex, feedback) => {
+  return apiClient.post(`/conversations/${conversationId}/feedback`, {
+    message_index: messageIndex,
+    feedback,
+  });
+};
+
+/**
+ * Toggles message bookmark status.
+ */
+export const toggleBookmark = (conversationId, messageIndex, bookmarked) => {
+  return apiClient.post(`/conversations/${conversationId}/bookmark`, {
+    message_index: messageIndex,
+    bookmarked,
+  });
+};
+
+/**
+ * Fetch application stats.
+ */
+export const getStats = () => {
+  return apiClient.get('/stats');
+};
+
+/**
+ * Fetch active settings.
+ */
+export const getSettings = () => {
+  return apiClient.get('/settings');
+};
+
+/**
+ * Updates settings (provider, model, threshold, system_prompt, api_keys).
+ */
+export const updateSettings = (settings) => {
+  return apiClient.post('/settings', settings);
+};
+
+/**
  * Queries the chatbot and streams the response token-by-token using Fetch API ReadableStream.
  */
-export async function askQuestionStream(documentId, question, { onToken, onSource, onError, onDone }) {
+export async function askQuestionStream(documentId, question, { conversationId, onToken, onSource, onError, onDone }) {
   try {
+    const payload = {
+      document_id: documentId,
+      question: question
+    };
+    if (conversationId) {
+      payload.conversation_id = conversationId;
+    }
+
     const response = await fetch(`${API_BASE_URL}/ask`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        document_id: documentId,
-        question: question
-      })
+      body: JSON.stringify(payload)
     });
     
     if (!response.ok) {
@@ -86,7 +181,12 @@ export async function askQuestionStream(documentId, question, { onToken, onSourc
             onToken(data.token);
           }
           if (data.source) {
-            onSource(data.source);
+            // Callback for standard page string source
+            onSource(data.source, null, 0);
+          }
+          if (data.chunks) {
+            // Callback with rich chunks and confidence score
+            onSource(null, data.chunks, data.confidence);
           }
           if (data.done && onDone) {
             onDone();
@@ -104,7 +204,8 @@ export async function askQuestionStream(documentId, question, { onToken, onSourc
         try {
           const data = JSON.parse(cleaned.substring(6));
           if (data.token) onToken(data.token);
-          if (data.source) onSource(data.source);
+          if (data.source) onSource(data.source, null, 0);
+          if (data.chunks) onSource(null, data.chunks, data.confidence);
           if (data.done && onDone) onDone();
         } catch (e) {
           // ignore

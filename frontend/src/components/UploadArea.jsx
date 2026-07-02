@@ -1,161 +1,315 @@
-import React, { useState, useRef } from 'react';
-import { Upload, FileText, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { UploadCloud, FileText, CheckCircle2, AlertTriangle, Loader2, Sparkles, File } from 'lucide-react';
 import { uploadDocument } from '../services/api';
 
+const STAGES = [
+  'Uploading document to server…',
+  'Extracting text & slide content…',
+  'Splitting into semantic chunks…',
+  'Generating vector embeddings…',
+  'Building FAISS index on disk…',
+  'Pre-compiling suggested queries…',
+];
+
+const FORMATS = [
+  { label: 'PDF', color: 'rgba(239,68,68,0.8)' },
+  { label: 'PPT', color: 'rgba(245,158,11,0.8)' },
+  { label: 'PPTX', color: 'rgba(99,102,241,0.8)' },
+];
+
 export default function UploadArea({ onUploadSuccess }) {
-  const [dragActive, setDragActive] = useState(false);
-  const [file, setFile] = useState(null);
-  const [progress, setProgress] = useState(0);
-  const [status, setStatus] = useState('idle'); // idle, uploading, success, error
-  const [errorMsg, setErrorMsg] = useState('');
-  const inputRef = useRef(null);
+  const [drag, setDrag]   = useState(false);
+  const [file, setFile]   = useState(null);
+  const [progress, setProgress]       = useState(0);
+  const [status, setStatus]           = useState('idle'); // idle | uploading | success | error
+  const [errorMsg, setErrorMsg]       = useState('');
+  const [stage, setStage]             = useState('');
+  const stageTimer = useRef(null);
+  const inputRef   = useRef(null);
 
-  const validateAndUploadFile = (selectedFile) => {
-    if (!selectedFile) return;
+  useEffect(() => {
+    if (status === 'uploading' && progress === 100) {
+      let idx = 1;
+      setStage(STAGES[idx]);
+      stageTimer.current = setInterval(() => {
+        idx++;
+        if (idx < STAGES.length) setStage(STAGES[idx]);
+        else clearInterval(stageTimer.current);
+      }, 3000);
+    }
+    return () => clearInterval(stageTimer.current);
+  }, [status, progress]);
 
-    const filename = selectedFile.name.toLowerCase();
-    const ext = filename.substring(filename.lastIndexOf('.'));
+  const validate = (f) => {
+    if (!f) return;
+    const ext = f.name.toLowerCase().match(/\.[^.]+$/)?.[0];
     if (!['.pdf', '.ppt', '.pptx'].includes(ext)) {
       setStatus('error');
-      setErrorMsg('Only PDF and PPT files are supported.');
+      setErrorMsg('Only PDF and PPT/PPTX files are supported.');
+      return;
+    }
+    if (f.size > 25 * 1024 * 1024) {
+      setStatus('error');
+      setErrorMsg('File exceeds the 25 MB size limit.');
       return;
     }
 
-    setFile(selectedFile);
+    setFile(f);
     setStatus('uploading');
     setProgress(0);
+    setStage(STAGES[0]);
     setErrorMsg('');
 
-    uploadDocument(selectedFile, (percent) => {
-      setProgress(percent);
+    uploadDocument(f, (pct) => {
+      setProgress(pct);
+      if (pct < 100) setStage(`Uploading… ${pct}%`);
     })
       .then((res) => {
+        clearInterval(stageTimer.current);
         setStatus('success');
-        if (onUploadSuccess) {
-          onUploadSuccess(res.data);
-        }
+        window.dispatchEvent(new Event('document-uploaded'));
+        onUploadSuccess?.(res.data);
       })
       .catch((err) => {
+        clearInterval(stageTimer.current);
         setStatus('error');
-        const detail = err.response?.data?.detail || 'Something went wrong. Please try again.';
-        setErrorMsg(detail);
+        setErrorMsg(err.response?.data?.detail || 'Something went wrong. Please try again.');
         setFile(null);
       });
   };
 
-  const handleDrag = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.type === 'dragenter' || e.type === 'dragover') {
-      setDragActive(true);
-    } else if (e.type === 'dragleave') {
-      setDragActive(false);
-    }
+  const onDrag = (e) => {
+    e.preventDefault(); e.stopPropagation();
+    setDrag(e.type === 'dragenter' || e.type === 'dragover');
+  };
+  const onDrop = (e) => {
+    e.preventDefault(); e.stopPropagation();
+    setDrag(false);
+    validate(e.dataTransfer.files?.[0]);
+  };
+  const onChange = (e) => validate(e.target.files?.[0]);
+  const onClick  = () => {
+    if (['idle','error','success'].includes(status)) inputRef.current.click();
   };
 
-  const handleDrop = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(false);
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      validateAndUploadFile(e.dataTransfer.files[0]);
-    }
-  };
+  // ── Idle State ─────────────────────────────────────────────────
+  const IdleContent = () => (
+    <div className="flex flex-col items-center gap-5 py-4">
+      {/* Icon */}
+      <div className="relative">
+        <div
+        className="flex h-16 w-16 items-center justify-center rounded-2xl"
+        style={{
+          background: 'linear-gradient(135deg, rgba(0,200,200,0.18) 0%, rgba(139,92,246,0.12) 100%)',
+          border: '1px solid rgba(0,200,200,0.28)',
+          boxShadow: '0 8px 32px rgba(0,200,200,0.22)',
+        }}
+      >
+        <UploadCloud className="h-7 w-7 text-teal-400" />
+        </div>
+        {drag && (
+          <span className="absolute inset-0 rounded-2xl animate-ping"
+            style={{ background: 'rgba(99,102,241,0.15)' }} />
+        )}
+      </div>
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    if (e.target.files && e.target.files[0]) {
-      validateAndUploadFile(e.target.files[0]);
-    }
-  };
+      {/* Text */}
+      <div className="text-center space-y-1.5">
+        <h3 className="text-base font-bold text-white">
+          {drag ? 'Drop your document here' : 'Upload your document'}
+        </h3>
+        <p className="text-xs text-slate-400">
+          Drag & drop or{' '}
+          <span className="text-teal-400 font-semibold cursor-pointer hover:text-teal-300 transition-colors">
+            browse files
+          </span>
+        </p>
+      </div>
 
-  const onButtonClick = () => {
-    inputRef.current.click();
-  };
+      {/* Format badges */}
+      <div className="flex items-center gap-2">
+        {FORMATS.map(({ label, color }) => (
+          <span
+            key={label}
+            className="px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider"
+            style={{
+              background: color.replace('0.8', '0.12'),
+              border: `1px solid ${color.replace('0.8', '0.35')}`,
+              color: color.replace('0.8', '1'),
+            }}
+          >
+            {label}
+          </span>
+        ))}
+        <span
+          className="px-2.5 py-1 rounded-lg text-[10px] font-medium"
+          style={{
+            background: 'rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            color: '#64748b',
+          }}
+        >
+          Max 25 MB
+        </span>
+      </div>
+    </div>
+  );
+
+  // ── Uploading State ────────────────────────────────────────────
+  const UploadingContent = () => (
+    <div className="flex flex-col items-center gap-4 py-4 w-full max-w-sm">
+      <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl"
+        style={{
+          background: 'rgba(0,200,200,0.10)',
+          border: '1px solid rgba(0,200,200,0.25)',
+        }}
+      >
+        <Loader2 className="h-6 w-6 text-teal-400 animate-spin" />
+      </div>
+
+      <div className="text-center space-y-1 w-full px-4">
+        <p className="text-sm font-bold text-white">Processing Document</p>
+        <p className="text-[11px] text-teal-400 font-medium animate-pulse min-h-[1rem]">
+          {stage}
+        </p>
+        {file && (
+          <p className="text-[10px] text-slate-500 truncate">{file.name}</p>
+        )}
+      </div>
+
+      {/* Progress bar */}
+      <div className="w-full max-w-xs px-4 space-y-1.5">
+        <div
+          className="h-1.5 w-full rounded-full overflow-hidden"
+          style={{ background: 'rgba(255,255,255,0.06)' }}
+        >
+          <div
+            className="h-full rounded-full transition-all duration-500"
+            style={{
+              width: `${progress}%`,
+          background: 'linear-gradient(90deg, #00c8c8, #06b6d4, #8b5cf6)',
+          boxShadow: '0 0 8px rgba(0,200,200,0.55)',
+            }}
+          />
+        </div>
+        <div className="flex justify-between text-[10px] text-slate-500">
+          <span>Indexing…</span>
+          <span className="text-teal-400 font-bold">{progress}%</span>
+        </div>
+      </div>
+    </div>
+  );
+
+  // ── Success State ──────────────────────────────────────────────
+  const SuccessContent = () => (
+    <div className="flex flex-col items-center gap-4 py-4">
+      <div
+        className="flex h-14 w-14 items-center justify-center rounded-2xl"
+        style={{
+          background: 'rgba(16,185,129,0.12)',
+          border: '1px solid rgba(16,185,129,0.3)',
+          boxShadow: '0 4px 20px rgba(16,185,129,0.2)',
+        }}
+      >
+        <CheckCircle2 className="h-7 w-7 text-emerald-400" />
+      </div>
+      <div className="text-center space-y-1">
+        <div className="flex items-center justify-center gap-1.5">
+          <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+          <p className="text-sm font-bold text-white">Document Indexed!</p>
+        </div>
+        <p className="text-xs text-emerald-400 font-medium truncate max-w-[240px]">
+          {file?.name}
+        </p>
+        <p className="text-[10px] text-slate-500 mt-1">Switching to chat… or click to upload another</p>
+      </div>
+    </div>
+  );
+
+  // ── Error State ────────────────────────────────────────────────
+  const ErrorContent = () => (
+    <div className="flex flex-col items-center gap-4 py-4">
+      <div
+        className="flex h-14 w-14 items-center justify-center rounded-2xl"
+        style={{
+          background: 'rgba(239,68,68,0.1)',
+          border: '1px solid rgba(239,68,68,0.3)',
+        }}
+      >
+        <AlertTriangle className="h-6 w-6 text-red-400" />
+      </div>
+      <div className="text-center space-y-1">
+        <p className="text-sm font-bold text-white">Upload Failed</p>
+        <p className="text-xs text-red-400 font-medium max-w-xs">{errorMsg}</p>
+        <p className="text-[10px] text-slate-500 mt-1">Click to try again</p>
+      </div>
+    </div>
+  );
+
+  // ── Border color by status ─────────────────────────────────────
+  const borderStyle = {
+    idle:      drag
+      ? 'rgba(99,102,241,0.6)'
+      : 'rgba(255,255,255,0.1)',
+    uploading: 'rgba(99,102,241,0.5)',
+    success:   'rgba(16,185,129,0.45)',
+    error:     'rgba(239,68,68,0.45)',
+  }[status];
+
+  const bgStyle = {
+    idle:      drag ? 'rgba(99,102,241,0.06)' : 'rgba(11,15,30,0.45)',
+    uploading: 'rgba(99,102,241,0.04)',
+    success:   'rgba(16,185,129,0.04)',
+    error:     'rgba(239,68,68,0.04)',
+  }[status];
 
   return (
-    <div className="w-full">
+    <div className="w-full select-none">
       <div
-        onDragEnter={handleDrag}
-        onDragOver={handleDrag}
-        onDragLeave={handleDrag}
-        onDrop={handleDrop}
-        onClick={status === 'idle' || status === 'error' || status === 'success' ? onButtonClick : undefined}
-        className={`relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-8 text-center transition-all cursor-pointer select-none
-          ${dragActive ? 'border-brand-500 bg-brand-500/10' : 'border-slate-800 bg-slate-900/40 hover:border-slate-750 hover:bg-slate-900/60'}
-          ${status === 'uploading' ? 'glow-pulse border-brand-500/50 pointer-events-none' : ''}
-          ${status === 'success' ? 'border-emerald-500/50 bg-emerald-500/5' : ''}
-          ${status === 'error' ? 'border-red-500/50 bg-red-500/5' : ''}
+        onDragEnter={onDrag}
+        onDragOver={onDrag}
+        onDragLeave={onDrag}
+        onDrop={onDrop}
+        onClick={onClick}
+        className={`relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed
+          text-center transition-all duration-300
+          ${status !== 'uploading' ? 'cursor-pointer' : 'pointer-events-none'}
+          ${status === 'uploading' ? 'glow-pulse' : ''}
         `}
+        style={{
+          borderColor: borderStyle,
+          background: bgStyle,
+          backdropFilter: 'blur(16px)',
+          padding: '2rem 1.5rem',
+          minHeight: '220px',
+        }}
       >
         <input
           ref={inputRef}
           type="file"
           className="hidden"
           accept=".pdf,.ppt,.pptx"
-          onChange={handleChange}
+          onChange={onChange}
         />
 
+        {/* Corner accents */}
         {status === 'idle' && (
           <>
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 text-slate-400 group-hover:text-slate-350 transition-colors">
-              <Upload className="h-6 w-6" />
-            </div>
-            <h3 className="text-md font-semibold text-white">Upload your document</h3>
-            <p className="mt-1 text-xs text-slate-400">
-              Drag and drop PDF or PPT/PPTX here, or click to browse
-            </p>
-            <span className="mt-4 rounded-md bg-slate-950/50 px-2.5 py-1 text-[10px] font-medium text-slate-400 border border-slate-850">
-              Max file size 25MB
-            </span>
+            <span className="absolute top-3 left-3 w-4 h-4 border-t border-l rounded-tl-lg"
+              style={{ borderColor: drag ? 'rgba(99,102,241,0.7)' : 'rgba(255,255,255,0.12)' }} />
+            <span className="absolute top-3 right-3 w-4 h-4 border-t border-r rounded-tr-lg"
+              style={{ borderColor: drag ? 'rgba(99,102,241,0.7)' : 'rgba(255,255,255,0.12)' }} />
+            <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l rounded-bl-lg"
+              style={{ borderColor: drag ? 'rgba(99,102,241,0.7)' : 'rgba(255,255,255,0.12)' }} />
+            <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r rounded-br-lg"
+              style={{ borderColor: drag ? 'rgba(99,102,241,0.7)' : 'rgba(255,255,255,0.12)' }} />
           </>
         )}
 
-        {status === 'uploading' && (
-          <div className="w-full max-w-xs">
-            <Loader2 className="mx-auto h-8 w-8 animate-spin text-brand-500 mb-3" />
-            <h3 className="text-sm font-semibold text-white">Uploading & indexing...</h3>
-            <p className="text-xs text-slate-400 mt-1 truncate">{file?.name}</p>
-            
-            <div className="mt-4 h-2 w-full rounded-full bg-slate-950 overflow-hidden">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-brand-600 to-brand-400 transition-all duration-300"
-                style={{ width: `${progress}%` }}
-              ></div>
-            </div>
-            <span className="text-xs text-brand-400 font-semibold mt-2 block">{progress}%</span>
-          </div>
-        )}
-
-        {status === 'success' && (
-          <>
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
-              <CheckCircle className="h-6 w-6" />
-            </div>
-            <h3 className="text-md font-semibold text-white">Document Processed</h3>
-            <p className="mt-1 text-xs text-emerald-400 font-medium truncate max-w-xs">
-              {file?.name}
-            </p>
-            <p className="mt-3 text-[11px] text-slate-400">
-              Click to replace with another file
-            </p>
-          </>
-        )}
-
-        {status === 'error' && (
-          <>
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
-              <AlertCircle className="h-6 w-6" />
-            </div>
-            <h3 className="text-md font-semibold text-white">Upload Failed</h3>
-            <p className="mt-1 text-xs text-red-400 font-medium">
-              {errorMsg}
-            </p>
-            <p className="mt-3 text-[11px] text-slate-400">
-              Click to try again
-            </p>
-          </>
-        )}
+        {status === 'idle'      && <IdleContent />}
+        {status === 'uploading' && <UploadingContent />}
+        {status === 'success'   && <SuccessContent />}
+        {status === 'error'     && <ErrorContent />}
       </div>
     </div>
   );

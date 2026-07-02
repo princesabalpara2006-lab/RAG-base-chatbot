@@ -1,6 +1,6 @@
 import os
 from langchain_community.vectorstores import FAISS
-from backend.rag.embeddings import get_embeddings
+from rag.embeddings import get_embeddings
 
 # Root storage directory for vector index files
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
